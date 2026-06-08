@@ -13,7 +13,7 @@ Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
 // ── Joystick ─────────────────────────────────────────
 #define JOY_X   A0
 #define JOY_Y   A1
-#define JOY_BTN 2
+#define JOY_BTN 23
 
 void setup() {
   Serial.begin(115200);
@@ -40,7 +40,7 @@ int speed=0;
 void loop() {
   // ── Read joystick ───────────────────────────────────
   int joy_x   = analogRead(JOY_X);         // 0 - 1023
-  int joy_y   = analogRead(JOY_Y);         // 0 - 1023
+  int joy_y   = analogRead(JOY_Y);         // 0 - 103
   bool btn    = !digitalRead(JOY_BTN);     // true when pressed
   // ── Draw ────────────────────────────────────────────
   display.clearDisplay();
